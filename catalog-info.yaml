@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: testing-remote-clusters 
+  description: Secure Supply Chain Example for Audio to Text Application   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=testing-remote-clusters  
+    janus-idp.io/tekton: testing-remote-clusters 
+    backstage.io/kubernetes-id: testing-remote-clusters 
+    backstage.io/techdocs-ref: dir:. 
+    quay.io/repository-slug: rh-ee-lyoon-dh/testing-remote-clusters
+  tags: ["ai", "whispercpp", "python", "asr"] 
+spec:
+  type: service
+  owner: user:guest 
+  lifecycle: experimental
+ 
